@@ -50,6 +50,8 @@ def decode(src):
         n = 3
     elif img.mode == 'RGBA':
         n = 4
+    else:
+        n=0
     total_pixels = array.size//n
 
     hidden_bits = ""
