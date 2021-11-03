@@ -13,9 +13,13 @@ def encode(src, message, dest):
         n = 3
     elif img.mode == 'RGBA':
         n = 4
+    else:
+        n=0
     total_pixels = array.size//n
-
-    message += "$t3g0"
+    if message != None:
+        message += "$t3g0"
+    else:
+        message = ""
     b_message = ''.join([format(ord(i), "08b") for i in message])
     req_pixels = len(b_message)
 
